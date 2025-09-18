@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Things I Love About You</title>
+<style>
+    body {
+        position: relative;
+        background-color: #8B0000;
+        background-image: url('img.jpg');
+        background-repeat: repeat;
+        background-size: 80px 80px;
+        color: white;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+    }
+
+    h1 {
+        margin-bottom: 40px;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        background-color: rgba(0,0,0,0.25);
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 12px;
+    }
+
+    .reasons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+    }
+
+    .reasons li {
+        width: 80%;
+        padding: 15px;
+        background-color: rgba(0,0,0,0.25); 
+        border-radius: 10px;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.4em;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        text-align: left;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+        .reasons li {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>51 Things I Love About You</h1>
+<ul class="reasons" id="reasons"></ul>
+
+<script>
+    const reasons = [
+        "Your smile when you smile (rarely)",
+        "Your company",
+        "Your eyes",
+        "All of your insecurities ;)",
+        "Your silliness",
+        "The way you laugh",
+        "The way you get angry",
+        "The way you forgive me quickly",
+        "Your subtle habits",
+        "The way you brighten my day",
+        "How you always comfort me",
+        "Your cute little expressions",
+        "The way you remember tiny details",
+        "How you make even bad days better",
+        "How you understand all my references (ahahaha)",
+        "How you made me a better person",
+        "Your random acts of love",
+        "The way you smell (good girl perfume)",
+        "How you care about your closed ones",
+        "Your honesty",
+        "How you never give up on people whom you care about",
+        "Your hair",
+        "Your silly and childish side",
+        "Your excitement about little things",
+        "Your thoughtfulness",
+        "The way you share your world with me",
+        "The way you make me feel like I belong",
+        "Your laughter when you’re truly happy",
+        "Your humor",
+        "The way you act when I mess up",
+        "Your sense of adventure",
+        "Your love for sunsets",
+        "Your late-night talks with me",
+        "Your compassion",
+        "The way you make holidays magical",
+        "The way you make songs more beautiful",
+        "Your unique personality",
+        "Your playful texts",
+        "Your kindness in arguments",
+        "Your belief in true love",
+        "The way you trust the process",
+        "Your faith in us",
+        "The way you love your friends",
+        "The way you’re always you",
+        "Your passion for what you love",
+        "The way you bring light into dark days",
+        "Your attention to the little things",
+        "Your simplicity",
+        "Your taste in music (mine is obviously better)",
+        "Your hobbies",
+        "You"
+    ];
+
+    const list = document.getElementById("reasons");
+
+    reasons.forEach((reason, i) => {
+        const li = document.createElement("li");
+        li.textContent = `${i + 1}. ${reason}`;
+        li.style.animationDelay = `${i * 0.05}s`; // staggered fade-in
+        list.appendChild(li);
+    });
+</script>
+
+
+</body>
+</html>
